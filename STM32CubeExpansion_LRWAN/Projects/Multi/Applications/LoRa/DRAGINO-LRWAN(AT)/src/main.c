@@ -825,6 +825,20 @@ static void Send( void )
 		AppData.Buff[i++] = (uint8_t)((COUNT2)>>8);
 		AppData.Buff[i++] =	(uint8_t)(COUNT2); 		
 	}
+  
+  else if(mode==10)
+	{
+		AppData.Buff[i++] =(int)(sensor_data.oil)>>8;          //oil float
+		AppData.Buff[i++] =(int)sensor_data.oil;
+	
+		AppData.Buff[i++] =(int)(sensor_data.ADC_1)>>8;     
+		AppData.Buff[i++] =(int)(sensor_data.ADC_1);
+		AppData.Buff[i++] =(int)(sensor_data.ADC_2)>>8; 
+		AppData.Buff[i++] =(int)(sensor_data.ADC_2);
+	
+    AppData.Buff[i++] =(batteryLevel_mV>>8);       //level of battery in mV
+		AppData.Buff[i++] =batteryLevel_mV & 0xFF;
+	}
 	
 	if(exit_temp==1)
 	{

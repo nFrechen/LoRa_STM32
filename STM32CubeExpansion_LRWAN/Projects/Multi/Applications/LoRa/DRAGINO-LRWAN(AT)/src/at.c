@@ -1571,14 +1571,14 @@ ATEerror_t at_MOD_set(const char *param)
   {
     return AT_PARAM_ERROR;
   }
-	if ((workmode>=1)&&(workmode<=9))
+	if ((workmode>=1)&&(workmode<=10))
   {
     mode=workmode;	
   	PPRINTF("Attention:Take effect after ATZ\r\n");			
 	}
 	else
 	{
-		PPRINTF("Mode of range is 1 to 9\r\n");	
+		PPRINTF("Mode of range is 1 to 10\r\n");	
     return AT_PARAM_ERROR;
 	}
 	
